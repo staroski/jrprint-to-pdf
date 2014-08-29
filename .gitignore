@@ -4,7 +4,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
@@ -50,3 +49,4 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+/bin/
