@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.2
+Created-By: Ricardo Artur Staroski
+Sealed: true
+Permissions: all-permissions
+Codebase: *.staroski.com.br
+Application-Name: JRPrint to PDF
+Main-Class: br.com.staroski.jasper.JRPrint2Pdf
+Class-Path: . jasper/commons-collections-3.2.1.jar  jasper/commons-dig
+ ester-2.1.jar jasper/commons-logging-1.1.1.jar jasper/iText-2.1.7.js2
+ .jar jasper/jasperreports-5.6.0.jar
+

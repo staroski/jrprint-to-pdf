@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build-jrprint-to-pdf" default="make-all" basedir=".">
+
+	<property name="keystore" value="staroski.keystore" />
+	<property name="alias" value="staroski" />
+	<property name="storepass" value="12345678" />
+	<property name="tsaurl" value="http://timestamp.comodoca.com/rfc3161" />
+
+	<target name="make-all">
+		<antcall target="make-jrprint-to-pdf" />
+		<antcall target="make-jasper" />
+	</target>
+
+	<target name="make-jrprint-to-pdf">
+		<delete file="dist/make-jrprint-to-pdf.jar" />
+		<manifest file="MANIFEST.MF">
+			<attribute name="Manifest-Version" value="1.0" />
+			<attribute name="Sealed" value="true" />
+			<attribute name="Created-By" value="Ricardo Artur Staroski" />
+			<attribute name="Permissions" value="all-permissions" />
+			<attribute name="Codebase" value="*.staroski.com.br" />
+			<attribute name="Application-Name" value="JRPrint to PDF" />
+			<attribute name="Main-Class" value="br.com.staroski.jasper.JRPrint2Pdf" />
+			<attribute name="Class-Path" value=". jasper/commons-collections-3.2.1.jar  jasper/commons-digester-2.1.jar jasper/commons-logging-1.1.1.jar jasper/iText-2.1.7.js2.jar jasper/jasperreports-5.6.0.jar" />
+		</manifest>
+		<jar jarfile="dist/jrprint-to-pdf.jar" includes="**/*.*" basedir="bin" manifest="MANIFEST.MF" />
+		<signjar destDir="dist" keystore="${keystore}" alias="${alias}" storepass="${storepass}" tsaurl="${tsaurl}" preservelastmodified="true">
+			<path>
+				<fileset dir="dist" includes="jrprint-to-pdf.jar" />
+			</path>
+			<flattenmapper />
+		</signjar>
+	</target>
+
+	<target name="make-jasper">
+		<copy todir="dist/jasper">
+			<fileset dir="lib/jasper">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<signjar destDir="dist/jasper" keystore="${keystore}" alias="${alias}" storepass="${storepass}" tsaurl="${tsaurl}" preservelastmodified="true">
+			<path>
+				<fileset dir="dist/jasper" includes="*.jar" />
+			</path>
+			<flattenmapper />
+		</signjar>
+	</target>
+
+</project>

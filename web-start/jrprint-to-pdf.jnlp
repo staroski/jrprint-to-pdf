@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="6.0+"
+      codebase="http://www.staroski.com.br/jrprint-to-pdf/"
+      href="jrprint-to-pdf.jnlp">
+	<information>
+		<title>JRPrint to PDF</title>
+		<vendor>Staroski</vendor>
+		<homepage href=""/>
+		<description>Programa para converter arquivos JRPrint para PDF</description>
+		<description kind="short">Conversor de JRPrint para PDF</description>
+		<icon href="icone_128x128.png"/>
+		<offline-allowed/>
+		<shortcut online="true" install="true">
+			<desktop/>
+			<menu submenu="Staroski"/>
+		</shortcut>
+	</information>
+	<security>
+		<all-permissions/>
+	</security>
+	<resources>
+		<j2se version="1.7+" href="http://java.sun.com/products/autodl/j2se"/>
+		<jar href="jrprint-to-pdf.jar" main="true" download="progress" />
+		<jar href="jasper/commons-collections-3.2.1.jar" />
+		<jar href="jasper/commons-digester-2.1.jar" />
+		<jar href="jasper/commons-logging-1.1.1.jar" />
+		<jar href="jasper/iText-2.1.7.js2.jar" />
+		<jar href="jasper/jasperreports-5.6.0.jar" />
+	</resources>
+	<application-desc name="JRPrint to PDF"
+	                  main-class="br.com.staroski.jasper.JRPrint2Pdf"
+					  progress-class="br.com.staroski.jasper.ProgressWindow"
+	                  width="640"
+	                  height="180">
+	</application-desc>
+	<update check="always" policy="prompt-update"/>
+</jnlp>

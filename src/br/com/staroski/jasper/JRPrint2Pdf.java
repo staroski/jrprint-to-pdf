@@ -61,8 +61,12 @@ public class JRPrint2Pdf extends JFrame {
 	private JButton fechar;
 
 	public JRPrint2Pdf() {
-		super("JRPRINT -> PDF - (C) 2014 - Ricardo Artur Staroski");
+		super(Application.NAME + " - " + Application.VENDOR_URL);
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		setIconImage(Application.ICON);
+		JPanel container = new JPanel();
+		setContentPane(container);
+
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -74,14 +78,15 @@ public class JRPrint2Pdf extends JFrame {
 		JPanel saida = montaPainelSaida();
 		JPanel botoes = montaPainelBotoes();
 
-		Container container = getContentPane();
+		container.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		container.setLayout(new GridLayout(3, 1));
 		container.add(entrada);
 		container.add(saida);
 		container.add(botoes);
 
-		Dimension size = new Dimension(640, 150);
+		Dimension size = new Dimension(640, 180);
 		setSize(size);
+		setResizable(false);
 		setMinimumSize(size);
 		setLocationRelativeTo(null);
 	}
@@ -131,7 +136,7 @@ public class JRPrint2Pdf extends JFrame {
 		campoEntrada = new JTextField();
 
 		botaoEntrada = new JButton("...");
-		botaoEntrada.setToolTipText("Selecionar arquivo JRPRINT");
+		botaoEntrada.setToolTipText("Selecionar arquivo JRPrint");
 		botaoEntrada.addActionListener(new ActionListener() {
 
 			@Override
@@ -141,7 +146,7 @@ public class JRPrint2Pdf extends JFrame {
 		});
 
 		JPanel painel = new JPanel(new BorderLayout());
-		painel.add(BorderLayout.NORTH, new JLabel("Arquivo JRPRINT de entrada:"));
+		painel.add(BorderLayout.NORTH, new JLabel("Arquivo JRPrint de entrada:"));
 		painel.add(BorderLayout.CENTER, campoEntrada);
 		painel.add(BorderLayout.EAST, botaoEntrada);
 		painel.setPreferredSize(new Dimension(400, 80));
@@ -247,7 +252,7 @@ public class JRPrint2Pdf extends JFrame {
 
 			@Override
 			public String getDescription() {
-				return "Portable Document Format ( *." + PDF + " )";
+				return "Portable Document Format ( *" + PDF + " )";
 			}
 		});
 		int opcao = chooser.showSaveDialog(this);
