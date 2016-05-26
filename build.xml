@@ -14,7 +14,7 @@
 	<target name="make-jrprint-to-pdf">
 		<delete file="dist/make-jrprint-to-pdf.jar" />
 		<manifest file="MANIFEST.MF">
-			<attribute name="Manifest-Version" value="1.0" />
+			<attribute name="Manifest-Version" value="1.1" />
 			<attribute name="Sealed" value="true" />
 			<attribute name="Created-By" value="Ricardo Artur Staroski" />
 			<attribute name="Permissions" value="all-permissions" />

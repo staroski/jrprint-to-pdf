@@ -1,4 +1,4 @@
-Manifest-Version: 1.0
+Manifest-Version: 1.1
 Ant-Version: Apache Ant 1.9.6
 Created-By: Ricardo Artur Staroski
 Sealed: true
