@@ -10,7 +10,7 @@ import javax.swing.filechooser.FileFilter;
 import net.sf.jasperreports.engine.*;
 
 /**
- * Classe utilitária para converter arquivos JRPRINT para PDF
+ * Classe utilitï¿½ria para converter arquivos JRPRINT para PDF
  * 
  * @author Ricardo Artur Staroski
  */
@@ -167,7 +167,7 @@ public class JRPrint2Pdf extends JFrame {
 		});
 
 		JPanel painel = new JPanel(new BorderLayout());
-		painel.add(BorderLayout.NORTH, new JLabel("Arquivo PDF de saída:"));
+		painel.add(BorderLayout.NORTH, new JLabel("Arquivo PDF de saÃ­da:"));
 		painel.add(BorderLayout.CENTER, campoSaida);
 		painel.add(BorderLayout.EAST, botaoSaida);
 		painel.setPreferredSize(new Dimension(400, 80));
@@ -195,7 +195,7 @@ public class JRPrint2Pdf extends JFrame {
 			setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			habilitar(false);
 			converter(entrada, saida);
-			JOptionPane.showMessageDialog(this, "Arquivo convertido com sucesso!", "Concluído", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(this, "Arquivo convertido com sucesso!", "Concluï¿½do", JOptionPane.INFORMATION_MESSAGE);
 		} catch (Throwable e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(this, "Erro desconhecido!", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -206,7 +206,7 @@ public class JRPrint2Pdf extends JFrame {
 	}
 
 	private void trataFechamento() {
-		int opcao = JOptionPane.showConfirmDialog(this, "Deseja realmente sair?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int opcao = JOptionPane.showConfirmDialog(this, "Deseja realmente sair?", "Confirmaï¿½ï¿½o", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if (opcao == JOptionPane.YES_OPTION) {
 			System.exit(0);
 		}
