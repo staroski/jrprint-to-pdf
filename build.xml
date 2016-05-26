@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="build-jrprint-to-pdf" default="make-all" basedir=".">
 
-	<property name="keystore" value="staroski.keystore" />
-	<property name="alias" value="staroski" />
+	<property name="keystore" value="StaroskiKeyStore.jks" />
+	<property name="alias" value="Staroski" />
 	<property name="storepass" value="12345678" />
 	<property name="tsaurl" value="http://timestamp.comodoca.com/rfc3161" />
 

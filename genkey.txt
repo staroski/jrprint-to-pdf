@@ -1,0 +1,9 @@
+Gerar:
+keytool -genkey -alias staroski -keystore staroski.keystore -validity 3650
+(senha em branco)
+
+Assinar:
+jarsigner -tsa http://timestamp.comodoca.com/rfc3161 -keystore staroski.keystore recarga.jar staroski
+
+Exportar:
+keytool -exportcert -keystore staroski.keystore -alias staroski -file staroski.cer
